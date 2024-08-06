@@ -183,6 +183,18 @@ export async function fetchCustomers() {
   }
 }
 
+export async function fetchCustomersPages() {
+  try {
+    const count = await sql`SELECT COUNT(*) FROM customers`;
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all customers.');
+  }
+}
+
+
 export async function fetchFilteredCustomers(query: string) {
   try {
     const data = await sql<CustomersTableType>`

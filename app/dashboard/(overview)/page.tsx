@@ -6,7 +6,6 @@ import { lusitana } from '../../ui/fonts';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '../../ui/skeletons';
 
-
 export default async function Page() {
 
   return (
@@ -26,7 +25,6 @@ export default async function Page() {
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
         </Suspense>
-        
       </div>
     </main>
   );
