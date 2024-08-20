@@ -14,6 +14,7 @@ export type Customer = {
   name: string;
   email: string;
   image_url: string;
+  created: string;
 };
 
 export type Invoice = {
@@ -86,3 +87,11 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+export type CustomerForm = {
+  id:string;
+  name: string;
+  email: string;
+  image_url: string;
+  created: string;
+}
