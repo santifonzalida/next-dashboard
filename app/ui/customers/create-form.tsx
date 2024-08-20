@@ -6,7 +6,7 @@ import { EnvelopeIcon, IdentificationIcon } from '@heroicons/react/24/outline';
 import { Button } from '../button';
 
 export default function Form() {
-    const initialState = { message: '', errors: {} };
+    const initialState = { message: '', errors: {name:[], email:[]} };
     const [state, formAction] = useActionState(createCustomer, initialState);
     return (
       <form action={formAction}>
